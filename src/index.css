@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.news-grid {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures space distribution */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.news-item a {
+  flex: 1; /* Allows the link content to expand and push the date down */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space inside the link */
+}
+
+.news-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.news-item h3 {
+  margin: 0 0 10px 0;
+}
+
+.news-item .date {
+  margin-top: auto; /* Pushes the date to the bottom */
+}
+
+.news-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #333; /* Optional: text color */
+}
+
+.news-detail {
+  padding: 20px;
+}
+
+.author, .source {
+  font-size: 1rem;
+  color: #666;
+}
+
+.news-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.news-image {
+  max-width: 50%;
+  height: auto;
+}
+
+.news-title {
+  flex: 1;
+  margin: 0;
+}
+
+.news-description {
+  margin-top: 20px;
+}
+
+.news-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .news-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+
+  .news-header{
+    flex-direction: column-reverse;
+  }
+}
